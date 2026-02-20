@@ -1,11 +1,180 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Euphorbia | Tattoo & Art Studio">
+  <nav class="fixed w-full z-50 px-8 py-8 flex justify-between items-center mix-blend-difference text-white">
+    <div class="text-lg font-semibold tracking-widest uppercase">Euphorbia</div>
+    <div class="hidden md:flex gap-12 text-[10px] uppercase tracking-[0.3em]">
+      <a href="#about" class="hover:opacity-50 transition-opacity">El Estudio</a>
+      <a href="#work" class="hover:opacity-50 transition-opacity">Portfolio</a>
+      <a href="#contact" class="hover:opacity-50 transition-opacity">Cita</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="h-screen flex flex-col justify-center px-8 md:px-24 relative overflow-hidden bg-[#F9F7F2]">
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1504548840739-580b10ae7715?q=80&w=1170&auto=format&fit=crop" 
+          class="w-full h-full object-cover grayscale opacity-[0.4] mix-blend-multiply" 
+          alt="Euphorbia Tattoo Background"
+        />
+      </div>
+      
+      <div class="relative z-10 max-w-5xl">
+        <span class="text-[10px] uppercase tracking-[0.8em] mb-8 block text-[#8C867A] animate-fade-in">
+          Dreams Written in Ink
+        </span>
+        <h1 class="text-7xl md:text-[11rem] leading-[0.8] mb-12 italic text-[#2C2C2C] tracking-tighter">
+          Euphorbia <br /> 
+          <span class="ml-12 md:ml-32">Studio.</span>
+        </h1>
+        <div class="flex flex-col md:flex-row items-start md:items-end gap-12 mt-8">
+            <p class="text-lg text-[#5A544B] max-w-sm font-light leading-relaxed">
+              Donde las ideas cobran vida. Especialistas en trazos finos y arte conceptual para la piel.
+            </p>
+            <a href="#work" class="inline-block border-b border-[#2C2C2C] pb-2 text-[10px] uppercase tracking-[0.4em] font-bold hover:tracking-[0.6em] transition-all duration-500 text-[#2C2C2C]">
+              Ver Portfolio
+            </a>
+        </div>
+      </div>
+      <div class="absolute bottom-12 left-10 text-[8px] uppercase tracking-[0.5em] text-[#8C867A]">
+        Ciudad / Est. 2026
+      </div>
+    </section>
+
+    <div class="bg-[#2C2C2C] py-6 overflow-hidden flex whitespace-nowrap border-y border-white/5">
+        <div class="flex animate-marquee items-center">
+            {Array(10).fill(0).map(() => (
+                <span class="text-[10px] uppercase tracking-[0.5em] text-[#F9F7F2] mx-12">Fine Line</span>
+                <span class="w-2 h-2 rounded-full bg-[#8C867A] block"></span>
+                <span class="text-[10px] uppercase tracking-[0.5em] text-[#F9F7F2] mx-12 italic font-serif">Blackwork</span>
+                <span class="w-2 h-2 rounded-full bg-[#8C867A] block"></span>
+                <span class="text-[10px] uppercase tracking-[0.5em] text-[#F9F7F2] mx-12">Custom Design</span>
+                <span class="w-2 h-2 rounded-full bg-[#8C867A] block"></span>
+            ))}
+        </div>
+    </div>
+
+    <section id="about" class="py-32 px-8 md:px-24 bg-[#F2EDE4] relative z-10">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+        <div class="relative">
+            <img src="https://images.unsplash.com/photo-1598211686290-a8ef209d87c5?q=80&w=1974" class="w-full h-[600px] object-cover grayscale" alt="Euphorbia space" />
+            <div class="absolute -bottom-8 -right-8 w-64 h-64 border border-[#D1CBC0] hidden md:block -z-10"></div>
+        </div>
+        <div class="space-y-8">
+          <h2 class="text-5xl md:text-6xl italic leading-tight text-[#2C2C2C]">Arte que no <br/> te deja dormir.</h2>
+          <p class="text-[#5A544B] leading-relaxed font-light text-lg">
+            En Euphorbia, transformamos la vigilia en expresión artística. Un espacio minimalista dedicado a la precisión y al silencio creativo.
+          </p>
+          <div class="grid grid-cols-2 gap-8 pt-8 border-t border-[#D1CBC0]">
+            <div>
+                <span class="block text-2xl mb-2 italic text-[#2C2C2C]">01.</span>
+                <h4 class="text-[10px] uppercase tracking-widest font-bold mb-2 text-[#2C2C2C]">Concepto</h4>
+                <p class="text-xs text-[#8C867A] leading-relaxed">Damos forma a tus ideas más abstractas con elegancia.</p>
+            </div>
+            <div>
+                <span class="block text-2xl mb-2 italic text-[#2C2C2C]">02.</span>
+                <h4 class="text-[10px] uppercase tracking-widest font-bold mb-2 text-[#2C2C2C]">Detalle</h4>
+                <p class="text-xs text-[#8C867A] leading-relaxed">Obsesión por la línea fina y el minimalismo puro.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="py-32 px-8 bg-[#F9F7F2]">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <h2 class="text-6xl md:text-7xl italic text-[#2C2C2C]">Archivo.</h2>
+            <span class="text-[10px] uppercase tracking-[0.4em] text-[#8C867A] border-l border-[#D1CBC0] pl-6">Curated Works 2025-2026</span>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="space-y-8">
+            <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?q=80&w=1974" class="w-full grayscale hover:grayscale-0 transition-all duration-700 border border-black/5" alt="Tattoo 1" />
+            <img src="https://images.unsplash.com/photo-1560707303-4e980ce876ad?q=80&w=1974" class="w-full aspect-square object-cover grayscale" alt="Tattoo 2" />
+          </div>
+          <div class="pt-20 space-y-8">
+            <img src="https://images.unsplash.com/photo-1550537687-c91072c4792d?q=80&w=1974" class="w-full border border-black/5" alt="Tattoo 3" />
+            <img src="https://images.unsplash.com/photo-1590201822003-20677497738f?q=80&w=1974" class="w-full grayscale hover:grayscale-0 transition-all duration-700" alt="Tattoo 4" />
+          </div>
+          <div class="space-y-8">
+            <img src="https://images.unsplash.com/photo-1542332606-b3d27038676b?q=80&w=1974" class="w-full aspect-[4/5] object-cover border border-black/5" alt="Tattoo 5" />
+            <div class="p-16 bg-[#E5E0D5] flex flex-col justify-center items-center text-center">
+                <p class="italic text-xl mb-6 text-[#2C2C2C]">¿Iniciamos el viaje?</p>
+                <a href="#contact" class="text-[10px] uppercase tracking-[0.4em] font-bold border-b border-[#2C2C2C] pb-1 hover:opacity-50 transition-opacity">Reserva tu cita</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-32 bg-[#2C2C2C] text-[#F9F7F2]">
+      <div class="max-w-5xl mx-auto px-8 grid md:grid-cols-2 gap-20 items-start">
+        <div>
+          <h2 class="text-6xl md:text-7xl italic mb-8">Contacto.</h2>
+          <p class="text-zinc-400 font-light leading-relaxed mb-12 text-lg">
+              Agenda tu sesión en Euphorbia. Priorizamos piezas de línea fina y diseños de autor.
+          </p>
+          <div class="text-[10px] uppercase tracking-[0.3em] space-y-6">
+              <div class="group">
+                <span class="text-zinc-500 block mb-1 italic uppercase font-semibold text-white">Directo</span>
+                <p class="text-sm tracking-widest">hello@Euphorbiatattoo.com</p>
+              </div>
+              <div class="group">
+                <span class="text-zinc-500 block mb-1 italic uppercase font-semibold text-white">Instagram</span>
+                <p class="text-sm tracking-widest">@Euphorbia.studio</p>
+              </div>
+              <div class="group">
+                <span class="text-zinc-500 block mb-1 italic uppercase font-semibold text-white">Sede</span>
+                <p class="text-sm tracking-widest">Ciudad, ES</p>
+              </div>
+          </div>
+        </div>
+        
+        <form class="bg-[#363636] p-10 space-y-8 shadow-2xl">
+          <input type="text" placeholder="NOMBRE" class="w-full bg-transparent border-b border-zinc-700 py-2 outline-none focus:border-white transition-colors text-sm tracking-widest uppercase placeholder:text-zinc-600 text-white" />
+          <input type="email" placeholder="EMAIL" class="w-full bg-transparent border-b border-zinc-700 py-2 outline-none focus:border-white transition-colors text-sm tracking-widest uppercase placeholder:text-zinc-600 text-white" />
+          <textarea rows="4" placeholder="IDEA DEL PROYECTO" class="w-full bg-transparent border-b border-zinc-700 py-2 outline-none focus:border-white transition-colors text-sm resize-none tracking-widest uppercase placeholder:text-zinc-600 text-white"></textarea>
+          <button class="w-full bg-[#F9F7F2] text-[#2C2C2C] py-5 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-white transition-colors">
+              Enviar Propuesta
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="py-12 bg-[#2C2C2C] text-[#5A544B] text-center text-[8px] uppercase tracking-[0.5em] border-t border-zinc-900/50">
+      &copy; 2026 Euphorbia Tattoo Studio — Permanent Dreams
+    </footer>
+  </main>
 </Layout>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Animación del Carrusel Infinito */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+
+  .animate-marquee {
+    display: flex;
+    animation: marquee 60s linear infinite;
+    width: max-content;
+  }
+
+  /* Pausa el carrusel al pasar el ratón */
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+</style>
